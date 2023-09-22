@@ -33,7 +33,7 @@ public class AutomovilFord {
 	
 	
 	public void acelerar() {
-		if (motor.EstaEncendido()) {
+		if (motor.getEncendido()) {
 			motor.revolucionar();		
 			velocidad = (motor.getRevoluciones() / 100);
 			System.out.println("Vamos a " + velocidad + " kph");			
