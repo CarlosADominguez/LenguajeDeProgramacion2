@@ -15,13 +15,11 @@ public class Motor {
 		aire = 0;
 		combustible = 0;
 		revoluciones = 0;
-		setEncendido(false);
+		encendido = false;
 		r = new Random();
 	}
 
-	public void setEncendido(boolean encendido) {
-        this.encendido = encendido;
-        }
+	
 	
 	private void prepararMezcla() {
 		while(!(Math.abs(aire - combustible) < 5 && (aire > 50 && combustible > 50))){
@@ -54,9 +52,9 @@ public class Motor {
 		}
 	}
 
-    	public boolean EstaEncendido() {
-        	return encendido;
-    	}
+    	public boolean getEncendido(){
+		return encendido;
+	}
 
     	
     	public int getRevoluciones() {
@@ -65,12 +63,14 @@ public class Motor {
 
     
     	public void setRevoluciones(int cantidad) {
-        	revoluciones = cantidad;
+        	this.revoluciones = cantidad;
     }
 
-    
+    	public void setEncendido(boolean encendido) {
+        	this.encendido = encendido;
+    }
     	public void revolucionar() {
-        	if (EstaEncendido()) {
+        	if (encendido) {
             		prepararMezcla();
             		comprimirMezcla();
             		encenderMezcla();
