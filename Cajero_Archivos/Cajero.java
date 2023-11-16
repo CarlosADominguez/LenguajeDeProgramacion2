@@ -63,7 +63,6 @@ public class Cajero implements Serializable {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Opción no válida. Intente de nuevo.");
-                leer.next();
             }
         }
     }
